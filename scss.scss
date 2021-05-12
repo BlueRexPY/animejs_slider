@@ -1,0 +1,81 @@
+body{
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Roboto", sans-serif;
+}
+
+$blue: #2B88D9;
+$green: #2bd979;
+
+.screen{
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+@mixin text_box($color,$grad1,$grad2,$grad3,$grad4,$text) {
+
+    z-index: 2;
+    h2{
+        color: $color;
+        font-size: 49px;
+        font-weight: bold;
+    }
+    p{
+        margin-bottom: 40px;
+        font-size: 22px;
+        color: $text;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 25px;
+        background: linear-gradient(-45deg, $grad1, $grad2, $grad3, $grad4);
+        background-size: 400% 400%;
+        -webkit-animation: Gradient 5s ease infinite;
+        -moz-animation: Gradient 5s ease infinite;
+        animation: Gradient 5s ease infinite;
+        transition: 0.3s;
+    }
+    a:hover{
+        background: linear-gradient(-45deg, #666666, #323333, #5f5f5f, #232424);
+        background-size: 400% 400%;
+    }
+}
+
+.line{
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);  
+
+}
+
+.blue { @include text_box($blue,#2D61A6, #2B88D9, #55A6D9, #99D9F2, #212121); }
+.green { @include text_box($green,#2da647, #2bd979, #55d9c7, #9de05f, #fff); }
+
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
