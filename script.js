@@ -39,7 +39,7 @@ function move(color,el1,el2){
       });
     anime({
         targets: line,
-        width: "1920px",
+        width: `${document.documentElement.clientWidth}`,
         duration: 300,
         easing: 'easeInOutSine'
       });
@@ -47,7 +47,7 @@ function move(color,el1,el2){
         delay: 300,
         duration: 450,
         targets: line,
-        height: "1920px",
+        height: `${document.documentElement.clientHeight}`,
         easing: 'easeInOutQuad',
     });
     anime({
